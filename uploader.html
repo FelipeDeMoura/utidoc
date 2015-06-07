@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lte-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lte-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lte-ie9 lte-ie8"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lte-ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+-->
+<TITLE>UTIDOC</TITLE>
+<!-- <script src="js/modernizr.custom.00501.js"></script> -->
+<link href="css/style.css?v=20" rel="stylesheet" type="text/css" media="screen">
+<!-- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> -->
+<!-- <script src="js/controls.js?v=105"></script> -->
+</head>
+
+<body>
+<div style="display:none;">
+<input id="file_uploader" type="file" name="uploadfile" multiple>
+<p class="results"></p>
+<div style="background:red;" class="elem"></div>  
+</div>
+<header class="header">
+    <div class="logo">
+        <h2>ultidoc</h2>
+    </div>
+    <span class="uploader_btn_top">+</span>
+</header>  
+<!-- start container -->
+<div class="container">
+    <section class="wrapper">
+        <div class="list_item_wrap">
+            <div class="list_space">
+                <ul class="list_divider">
+                    <li class="leftd">
+                        <span class="iconFile"></span>
+                        <div class="date_desc">
+                            <p class="date_d">Jan 9, 2015</p>
+                            <p class="date_md">Jan 9, 2015 modify</p>
+                        </div>
+                    </li>
+                    <li class="rightd">
+                        <h2 class="user_m">Felipe</h2>
+                        <button class="share_btn">share</button>
+                        <span class="delete_btn">x</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section><!-- end section wrapper -->
+    <footer class="big_upload_Btn_Box">
+        <button class="upload_btn_bottom">Upload</button>
+    </footer>
+</div><!-- end container -->
+
+<div class="login_user hidebx">
+    <div class="login_space">
+        <h2>Welcome!</h2>
+        <h3>sign in is easy!</h3>
+        <div class="sign_in_box">
+            <input type="text" name="signin" onfocus="if(this.value == 'type your full name') { this.value = ''; }" class="sign_in_txt" value="type your full name">
+            <input type="submit" class="sign_in_submit" value="go">
+        </div>
+    </div>
+</div>
+<div class="hlight_box hidebx"></div>
+    
+<!-- main js -->
+<script src="js/main.js"></script>
+</body>
+</html>

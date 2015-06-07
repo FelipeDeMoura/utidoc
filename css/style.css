@@ -1,0 +1,322 @@
+/*reset*/   
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, input, textarea, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, section, summary,
+time, mark, audio, video {
+    background:transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline:0;
+    font-size: 100%;
+    font: inherit;
+    font-style: normal;
+    font-weight: inherit;
+    vertical-align: baseline;
+    font-family:"Arial Unicode MS",Helvetica,Arial,sans-serif;
+}
+
+html { overflow-y: scroll; height:100%; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* flashing issue for ipad */
+body *, #main-header {
+-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+    background: #eee;
+    color: #666;
+}
+
+h2, h3, h4 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #8dc63f;
+}
+
+button{
+    -webkit-appearance: none; 
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    text-align:center; 
+    outline: none;
+    text-transform: uppercase;
+    font-style: normal;
+    background: #8dc63f;
+    color:#fff;
+    text-decoration: none;
+}
+
+button:hover{
+    color:#fff;
+    background-color:#638c2c;
+}
+
+.container {
+    top:50px;
+    width: 100%;
+    height: 100%;
+    margin-bottom:200px;
+    position:absolute;
+}
+
+.header {
+    height:50px;
+    background: #8dc641;
+    position:relative;
+    margin-top:0;
+}
+
+.logo {
+    position:absolute; 
+    top:50%; 
+    line-height:30px; 
+    margin-top:-15px; 
+    padding:0 .5em 0 .5em; 
+    border-radius:8px; 
+    left:20px;
+    text-transform: uppercase;
+}
+
+.logo h2 {
+    font-size:30px; 
+    font-weight:bold;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,.3);
+}
+
+.uploader_btn_top{
+    height:30px; 
+    width:30px; 
+    line-height:30px; 
+    margin-top:-15px; 
+    position:absolute; 
+    background:#004990; 
+    border-radius:50px; 
+    right:20px; 
+    top:50%; 
+    text-align:center; 
+    font-size:20px; 
+    font-weight:bold; 
+    color:#fff;
+    cursor: pointer;
+}
+
+.wrapper{
+    padding:0 20px;
+    margin: 80px 0 0 0;
+    height:100%; 
+    position:relative;
+}
+
+/* list wrap */
+.list_item_wrap{
+    min-height:100px; 
+    margin:10px 20px; 
+    border-radius:10px; 
+    background:#fff; 
+    position:relative;
+    box-shadow: 1px 2px 5px 1px rgba(0,0,0,.3);
+    border: solid 1px #ccc;
+}
+
+.list_item_wrap .list_space{
+    padding:10px;
+}
+
+.list_item_wrap .list_space .list_divider{
+    list-style:none; 
+    position:relative; 
+    vertical-align:top;
+}
+
+.list_item_wrap .list_space .list_divider li.leftd, .list_item_wrap .list_space .list_divider li.rightd {
+    display:inline-block;  
+    vertical-align:top; 
+    text-align:center; 
+    min-height:80px;
+}
+
+.list_item_wrap .list_space .list_divider li.leftd{
+    width:25%; 
+    text-align:center; 
+    border-right:solid 1px #ccc; 
+}
+
+.list_item_wrap .list_space .list_divider li.rightd{
+    width:70%;
+    padding-top: 10px;
+}
+
+.list_divider li.rightd .user_m{
+    display: inline-block;
+    margin-right: 20px;
+    color: #666;
+}
+
+.list_divider li.leftd .iconFile {
+    width:30px; 
+    min-height:30px; 
+    background:#eee;
+    position:absolute; 
+    top:40px; 
+    left:0; 
+    margin-top:-15px;
+}
+
+.list_divider li.leftd .date_desc {
+    margin-left:50px; 
+    margin-top:20px;
+    text-align: left;
+}
+
+.list_divider li.leftd p{
+    font-size:13px; 
+    font-weight:bold; 
+    margin:0.3em; 0;
+}
+
+.list_divider li.rightd h2{
+    text-align:center;
+}
+
+.list_item_wrap .list_divider .share_btn{
+    border:none; 
+    font-size:15px; 
+    padding:8px 20px; 
+    display:inline-block; 
+    margin:10px 0 0 0; 
+    text-align:center; 
+    border-radius:5px;
+    font-weight: bold;
+}
+
+.list_item_wrap .list_divider .delete_btn{
+    position:absolute; 
+    text-align:center; 
+    border-radius:10px; 
+    background: rgb(242, 167, 5); 
+    top:50%; 
+    margin-top: -20px;
+    font-weight:bold; 
+    font-size:22px; 
+    right:0; 
+    border:solid 1px rgb(176, 122, 5); 
+    height:30px; 
+    width:30px; 
+    line-height:22px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* footer */
+.big_upload_Btn_Box{
+    height:150px;
+    position:fixed; 
+    text-align:center; 
+    bottom:0; 
+    width:100%; 
+    background:#9a8c7e;
+}
+
+.big_upload_Btn_Box .upload_btn_bottom {
+    padding:15px 100px; 
+    margin-top:40px; 
+    line-height:40px; 
+    display:inline-block; 
+    font-size:20px; 
+    font-weight:bold; 
+    border-radius:10px; 
+}
+
+
+.login_user{
+    box-shadow: 1px 2px 5px 1px rgba(0,0,0,.3);
+    width:400px;
+    border-radius:3px; 
+    left:50%; 
+    background:#fff; 
+    border:solid 1px #eee;
+    margin-left:-200px; 
+    min-height:150px; 
+    top:50%; 
+    margin-top:-75px; 
+    position:fixed;
+    z-index:9999;
+}
+
+.login_space{
+    padding:20px; 
+    text-align:center;
+}
+
+.login_space h2{
+    font-size:30px;
+}
+
+.login_space h3{
+    color:#666;
+}
+
+.sign_in_box{
+    padding:20px;
+}
+
+.sign_in_box input.sign_in_txt {
+    background:#eee; 
+    display:inline-block; 
+    height:40px; 
+    color: #666;
+    padding:0 20px; 
+    border:solid 1px #ccc;
+}
+
+.sign_in_box .sign_in_submit {
+    display:inline-block; 
+    border-radius:5px; 
+    font-weight:bold; 
+    color:#fff; 
+    margin-left:10px; 
+    padding:10px 20px; 
+    background:#004990;
+    text-transform: uppercase;
+    height:40px; 
+}
+
+.hlight_box{
+    background:rgba(0,0,0,0.5); 
+    position:fixed; top:0; 
+    width:100%; 
+    height:100%; 
+    z-index:999;
+}
+
+
+/*hide hlight box*/
+.hlight_box.hidebx{
+    display: none;
+}
+
+.login_user.hidebx{
+    display: none;
+}
+
+
