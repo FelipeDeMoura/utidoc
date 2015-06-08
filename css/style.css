@@ -344,17 +344,39 @@ button:hover{
     display: none;
 }
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-width: 320px) 
-  and (max-width: 480px) {
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
     .list_item_wrap .list_space .list_divider li.leftd, .list_item_wrap .list_space .list_divider li.rightd {
-      width: 47%;
+      width: 48%;
     }
+      
+/*
+    .big_upload_Btn_Box{
+        height:150px;
+        position:fixed; 
+        text-align:center; 
+        bottom:0; 
+        width:100%; 
+        background:#9a8c7e;
+    }
+      
     .wrapper {
         padding: 0;
         margin: 80px 0 200px 0;
         position: relative;
+    }
+    .container {
+        top:0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+*/
+    .wrapper {
+        padding: 0;
+        margin: 80px 0 200px 0;
     }
     .list_divider li.rightd .user_m, .list_item_wrap .list_divider .share_btn{
         display: block; 
