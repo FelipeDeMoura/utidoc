@@ -158,13 +158,13 @@ button:hover{
 }
 
 .list_item_wrap .list_space .list_divider li.leftd{
-    width:25%; 
+    width:35%; 
     text-align:center; 
     border-right:solid 1px #ccc; 
 }
 
 .list_item_wrap .list_space .list_divider li.rightd{
-    width:70%;
+    width:63%;
     padding-top: 10px;
 }
 
@@ -344,43 +344,44 @@ button:hover{
     display: none;
 }
 
-/* Smartphones (portrait and landscape) ----------- */
+/* portrait and landscape */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    .list_item_wrap .list_space .list_divider li.leftd, .list_item_wrap .list_space .list_divider li.rightd {
+      width: 48%;
+    }
+    .wrapper {
+        padding: 0;
+        margin: 60px 0 300px 0;
+    }
+}
+
+/* Smartphones */
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
     .list_item_wrap .list_space .list_divider li.leftd, .list_item_wrap .list_space .list_divider li.rightd {
       width: 48%;
     }
-      
-/*
-    .big_upload_Btn_Box{
-        height:150px;
-        position:fixed; 
-        text-align:center; 
-        bottom:0; 
-        width:100%; 
-        background:#9a8c7e;
+    
+    .list_item_wrap{
+    margin:30px 10px; 
     }
-      
+    
     .wrapper {
         padding: 0;
-        margin: 80px 0 200px 0;
-        position: relative;
+        margin: 60px 0 300px 0;
     }
-    .container {
-        top:0;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-*/
-    .wrapper {
-        padding: 0;
-        margin: 80px 0 200px 0;
-    }
-    .list_divider li.rightd .user_m, .list_item_wrap .list_divider .share_btn{
+    .list_divider li.rightd .user_m{
         display: block; 
     }
+    
+    .list_item_wrap .list_divider .share_btn{
+    display:block; 
+        margin-left: 40px;
+    }
+    
     .list_divider li.rightd .user_m{
         margin: 0; 
     }
