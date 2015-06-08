@@ -21,10 +21,20 @@ var Ultidoc = Ultidoc || {};
 //var Ultidoc.Models = Ultidoc.Models || {};
 
 Ultidoc.App = (function(){
-    var fileUpload = document.querySelector("#file_uploader"),
-        resultQuery = document.querySelector(".results"),
-        appendHtml = document.querySelector(".elem"),
+    var bigfileUpload = document.querySelector("#big_file_uploader"),
+        topfileUpload = document.querySelector("#top_file_uploader"),
+        add_in_wrapper = document.querySelector(".wrapper"),
+        list_items = document.querySelector(".list_item_wrap"),
+        date_d = document.querySelector(".list_item_wrap .date_d"),
+        date_dm = document.querySelector(".list_item_wrap .date_md"),
+        share_btn = document.querySelector(".list_item_wrap .share_btn"),
+        iconFile = document.querySelector(".list_item_wrap .iconFile"),
+        user_m = document.querySelector(".list_item_wrap .user_m"),
+        delete_btn = document.querySelector(".list_item_wrap .delete_btn"), 
         mainFunc;
+        //resultQuery = document.querySelector(".results"),
+        //appendHtml = document.querySelector(".elem"),
+        
     
     mainFunc = function(){
         
@@ -60,14 +70,60 @@ Ultidoc.App = (function(){
 //                console.log(str);
 //                appendHtml.textContent = str;
                 
+                var date_d_str,
+                    date_dm_str,
+                    user_str = public.userFullName,
+                    name_icon_str,
+                    intercept_name,
+                    htmlStr,
+                    gp_html_str;
+                    
+                    
+                
                 for (var key in UserStorageData) {
-                    var obj = UserStorageData[key]['fileDesc'];
+                    //intercept_name = UserStorageData[key]['fileDesc'];
 //                    if(obj == UserStorageData.userKey.fileDesc){
-//                        console.log("found math: " + obj);
+
 //                    }
+                    date_d_str = UserStorageData[key]['date'];
+                    date_dm_str = UserStorageData[key]['lastDateMod'];
+                    name_icon_str = UserStorageData[key]['fileDesc'];
+                    
+                    add_in_wrapper
 //                    //intercept here
 //                    console.log(obj);
                 }
+                
+                //list_items = document.querySelector(".list_item_wrap"),
+
+                htmlStr = ["<div class='list_item_wrap'>",
+                "<div class='list_space'>",
+                "<ul class='list_divider'>",
+                "<li class='leftd'>",
+                "<span class='iconFile' data-file-type='" + name_icon_str + "'></span>",
+                "<div class='date_desc'>",
+                "<p class='date_d'>" + date_d_str + "</p>",
+                "<p class='date_md'>" + date_dm_str + "</p>",
+                "</div>",
+                "</li>",
+                "<li class='rightd'>",
+                "<h2 class='user_m'>" + user_str + "</h2>",
+                "<button class='share_btn'>share</button>",
+                "<span class='delete_btn'>x</span>",
+                "</li>",
+                "</ul>",
+                "</div>",
+                "</div>"];
+
+                gp_html_str = htmlStr.join("");
+                add_in_wrapper.innerHTML = gp_html_str;
+                //add_in_wrapper.html
+                
+//                date_d.textContent = date_d_str;
+//                date_dm.textContent = date_dm_str;
+//                name_icon_str.textContent = date_d_str;
+//                user_m.textContent = user_str;
+
                 
                 
                 //retrivedDataDistr(stringing);
@@ -103,7 +159,7 @@ Ultidoc.App = (function(){
         var retrieveFullData = retrivedData();
         retrieveFullData();
 
-        fileUpload.onchange = function(){
+        bigfileUpload.onchange = function(){
             var createNewUser = new CreateSessionUser("felipe",this.files[0]);
         };
         

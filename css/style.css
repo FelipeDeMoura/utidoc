@@ -130,12 +130,16 @@ button:hover{
 /* list wrap */
 .list_item_wrap{
     min-height:100px; 
-    margin:10px 20px; 
+    margin:30px 20px; 
     border-radius:10px; 
     background:#fff; 
     position:relative;
     box-shadow: 1px 2px 5px 1px rgba(0,0,0,.3);
     border: solid 1px #ccc;
+}
+
+.list_item_wrap:first-child{
+    margin-top: 10px;
 }
 
 .list_item_wrap .list_space{
@@ -239,12 +243,35 @@ button:hover{
 
 .big_upload_Btn_Box .upload_btn_bottom {
     padding:15px 100px; 
-    margin-top:40px; 
     line-height:40px; 
     display:inline-block; 
     font-size:20px; 
     font-weight:bold; 
     border-radius:10px; 
+}
+
+.hid_loader_file{
+    position:relative;
+    margin-top:40px;
+    display:inline-block;
+}
+
+.hid_loader_file input[type="file"], .uploader_btn_top input[type="file"]{
+    position:absolute;
+    -moz-opacity:0;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+    width:100%;
+    padding:0;
+    border:0;
+    left: 0;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    overflow:hidden;
+    cursor: pointer;
 }
 
 

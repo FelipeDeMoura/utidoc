@@ -21,41 +21,41 @@
 </head>
 
 <body>
-<div style="display:none;">
-<input id="file_uploader" type="file" name="uploadfile" multiple>
-<p class="results"></p>
-<div style="background:red;" class="elem"></div>  
-</div>
 <header class="header">
     <div class="logo">
         <h2>ultidoc</h2>
     </div>
-    <span class="uploader_btn_top">+</span>
+    <span class="uploader_btn_top"><input id="top_file_uploader" type="file" name="uploadfile" multiple>+</span>
 </header>  
 <!-- start container -->
 <div class="container">
     <section class="wrapper">
+<!--
         <div class="list_item_wrap">
             <div class="list_space">
                 <ul class="list_divider">
                     <li class="leftd">
                         <span class="iconFile"></span>
                         <div class="date_desc">
-                            <p class="date_d">Jan 9, 2015</p>
-                            <p class="date_md">Jan 9, 2015 modify</p>
+                            <p class="date_d"></p>
+                            <p class="date_md"></p>
                         </div>
                     </li>
                     <li class="rightd">
-                        <h2 class="user_m">Felipe</h2>
+                        <h2 class="user_m"></h2>
                         <button class="share_btn">share</button>
                         <span class="delete_btn">x</span>
                     </li>
                 </ul>
             </div>
         </div>
+-->
     </section><!-- end section wrapper -->
     <footer class="big_upload_Btn_Box">
-        <button class="upload_btn_bottom">Upload</button>
+        <div class="hid_loader_file">
+            <input id="big_file_uploader" type="file" name="uploadfile" multiple>
+            <button class="upload_btn_bottom">Upload</button>
+        </div>
     </footer>
 </div><!-- end container -->
 
