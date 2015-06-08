@@ -355,6 +355,12 @@ and (max-device-width : 1024px) {
         padding: 0;
         margin: 60px 0 300px 0;
     }
+    .big_upload_Btn_Box{
+        height: 85px;
+    }
+    .hid_loader_file {
+        margin-top: 10px;
+    }
 }
 
 /* Smartphones */
@@ -385,9 +391,20 @@ and (max-device-width : 480px) {
     .list_divider li.rightd .user_m{
         margin: 0; 
     }
-      .hid_loader_file{
-      display: block;
-      }
+    .hid_loader_file{
+    display: block;
+    }
+    .big_upload_Btn_Box{
+        height: 85px;
+        width: 80%;
+        width: 95%;
+    }
+    .big_upload_Btn_Box .upload_btn_bottom{
+        width: 100%;
+    }
+    .hid_loader_file {
+        margin-top: 10px;
+    }
 }
 
 
