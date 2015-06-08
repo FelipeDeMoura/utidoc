@@ -396,11 +396,6 @@ and (max-device-width : 480px) {
     }
     .big_upload_Btn_Box{
         height: 85px;
-        width: 80%;
-        width: 95%;
-    }
-    .big_upload_Btn_Box .upload_btn_bottom{
-        width: 100%;
     }
     .hid_loader_file {
         margin-top: 10px;
