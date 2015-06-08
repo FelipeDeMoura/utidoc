@@ -14,6 +14,7 @@
 //}
 
 var invokeWorker = new Worker("js/worker.js");
+var initSocket = new WebSocket("ws://felipedemoura.github.io/utidoc/uploader.html");
 
 //create user
 var Ultidoc = Ultidoc || {};
@@ -158,9 +159,15 @@ Ultidoc.App = (function(){
         
         //msg received from worker
         invokeWorker.onmessage = function(e) {
-            add_in_wrapper.innerHTML = e.data;
+            //add_in_wrapper.innerHTML = e.data;
             console.log("msg received from worker");
+            var receiveWk = e.data
+            initSocket.onopen = function (event) {
+                  initSocket.send(receiveWk); 
+                  add_in_wrapper.innerHTML
+            };
         }
+        
         
     };//end
     
