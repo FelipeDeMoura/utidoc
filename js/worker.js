@@ -1,5 +1,6 @@
+//msg received from main
 onmessage = function(e){
-    console.log("message received from main script");
-    var workerResult = 'Result: ' + e.data;
+    var workerResult = e.data;
     postMessage(workerResult);
+    console.log("received from main");
 }

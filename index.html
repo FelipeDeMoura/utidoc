@@ -1,1 +1,136 @@
-my new element!!
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lte-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lte-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lte-ie9 lte-ie8"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lte-ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!--
+<link rel="apple-touch-icon" sizes="72x72" href="images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="images/touch-icon-ipad3.png" />
+-->
+<TITLE>Clienteling</TITLE>
+<!-- <script src="js/modernizr.custom.00501.js"></script> -->
+<!-- <link href="css/style.css?v=20" rel="stylesheet" type="text/css" media="screen, print"> -->
+<!-- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> -->
+<!-- <script src="js/controls.js?v=105"></script> -->
+</head>
+
+<body>
+
+<div>
+<!--    <form enctype="multipart/form-data" method="post" action="">-->
+        <input id="files-upload" type="file" name="uploadfile" multiple>
+<!--
+        <input type="submit" value="Upload File" />
+    </form>
+-->
+</div>
+
+<style type="text/css">
+
+    /*reset*/   
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, input, textarea, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, section, summary,
+    time, mark, audio, video {
+        background:transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline:0;
+        font-size: 100%;
+        font: inherit;
+        font-style: normal;
+        font-weight: inherit;
+        vertical-align: baseline;
+    }
+
+</style>
+
+<script>
+var filesUpload = document.getElementById("files-upload");
+    
+filesUpload.addEventListener("change", function () {
+    console.log(this.files);
+    //traverseFiles(this.files[0]);
+    //var blob = new Blob(['abc123'], {type: 'text/plain'});
+    //console.log(this.files[0].lastModified);
+}, false);
+  
+function reqListener () {
+  //console.log(this.responseText);
+//    console.log("File name: " + file.fileName);
+//    console.log("File size: " + file.fileSize);
+//    console.log("Binary content: " + file.getAsBinary());
+//    console.log("Text content: " + file.getAsText(""));
+}
+
+function traverseFiles(file){
+//var oReq = new XMLHttpRequest();
+    //console.log(file);
+//oReq.open("post", file, true); 
+//oReq.responseType = "blob";
+//    oReq.overrideMimeType("text/plain; charset=x-user-defined");
+//oReq.setRequestHeader("Content-Type", "multipart/form-data");
+//oReq.setRequestHeader("X-File-Name", file.name);
+//oReq.setRequestHeader("X-File-Size", file.size);
+//oReq.setRequestHeader("X-File-Type", file.type);
+//oReq.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//oReq.onload = function(oEvent) {
+    //var blob = new Blob([oReq.response], {type: "image/png"});
+    //console.log(oReq.response);
+    //var blob = oReq.response;
+  //var blob = oReq.response;
+    //console.dir(blob);
+//    console.log("File name: " + file.name);
+//    console.log("File size: " + file.size);
+//    console.log("File size: " + file.type);
+//};
+    
+    
+//    console.log("Binary content: " + file.getAsBinary());
+//    console.log("Text content: " + file.getAsText(""));
+//var formData = new FormData();
+//formData.append("thefile", file);
+//oReq.send(formData);
+//oReq.onload = reqListener;
+//oReq.responseType = "arraybuffer";
+//oReq.open("get", "yourFile.txt", true);
+//oReq.send(file);
+//oReq.send();
+    
+    
+    
+    
+var formData = new FormData();
+formData.append("userfile", file);
+//var content = '<a id="a"><b id="b">hey!</b></a>';
+
+formData.append("webmasterfile", blob);
+var request = new XMLHttpRequest();
+request.open("POST", "http://localhost:4000/");
+var blob = new Blob([request.response], { type: "text/xml"});
+request.send(formData);
+    
+}
+
+</script>
+
+</body>
+</html>
