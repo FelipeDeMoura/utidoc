@@ -1,5 +1,4 @@
 var invokeWorker = new Worker("js/worker.js");
-//var initSocket = new WebSocket("ws://felipedemoura.github.io/utidoc/uploader.html");
 var getUservaleu;
 //create user
 var Ultidoc = Ultidoc || {};
@@ -65,6 +64,7 @@ Ultidoc.App = (function(){
             var htmlStr,
             gp_html_str;
             
+            //I know better I wanted to use createElement object or a underscore template 
             htmlStr = ["<div class='list_item_wrap'>",
                 "<div class='list_space'>",
                 "<ul class='list_divider'>",
@@ -169,19 +169,7 @@ Ultidoc.App = (function(){
         invokeWorker.onmessage = function(e) {
             add_in_wrapper.innerHTML = e.data;
             //console.log("msg received from worker");
-            
-            //var receiveWk = e.data
-            //initSocket.onopen = function (event) {
-                  //initSocket.send(receiveWk); 
-            //};
         }
-        
-        //remove rows
-//        delete_btn.onclick = function(){
-//            localStorage.removeItem(this.id);
-//            add_in_wrapper.removeChild(this);
-//        }
-        
         
     };//end
     
