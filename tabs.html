@@ -1,0 +1,153 @@
+<div id="tabbed-container">
+<ul id="tab" class="tabs-wrap">
+    <li class="selected"><span>Tab 1</span></li>
+    <li><span>Tab 2</span></li>
+    <li><span>Tab 3</span></li>
+</ul>
+<ul id="panel" class="panel-wrap">
+    <li>panel 1</li>
+    <li>panel 2</li>
+    <li>panel 3</li>
+</ul>
+</div><!-- tabbed container -->
+
+<style type="text/css">
+
+    /*reset*/
+    div, ul, li, span {
+        margin:0;
+        padding:0;
+        list-style: none;
+        line-height:1;
+        border:0;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 100%;
+    }
+
+    /* container */
+    #tabbed-container {
+        width:100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* tabs */
+    #tabbed-container .tabs-wrap{
+        white-space: nowrap;
+        letter-spacing: -5px;
+        text-align:left;
+    }
+    #tabbed-container .tabs-wrap li {
+        display: inline-block;
+        width: 33.3%;
+        border: solid 1px #000;
+        letter-spacing: normal;
+        background:#eee;
+        border-radius: 10px 10px 0 0;
+        text-align:center;
+    }
+
+    #tabbed-container .tabs-wrap span {
+        height:35px;
+        line-height:35px;
+        cursor: pointer;
+        display:block;
+        font-size:13px;
+        font-weight:bold;
+    }
+
+    /* panels */
+    #tabbed-container .panel-wrap{
+        border:solid 1px #000;
+        border-top:0;
+        margin-right:3px;
+        background:#eee;
+        min-height:300px;
+    }
+
+    #tabbed-container .panel-wrap li{
+       display:none;
+       background:#fff;
+       text-align:left;
+       padding:2em 1em 1em 1em;
+       font-size:12px;
+       min-height:300px;
+    }
+
+    #tabbed-container .panel-wrap li:first-child{
+       display:block;
+    }
+
+    /* tab state */
+    #tabbed-container .tabs-wrap li.selected {
+        border-bottom-color: #fff;
+        background: #fff;
+    }
+
+    /* media query */
+    @media (max-width : 465px) {
+        #tabbed-container .tabs-wrap{
+            display:none;
+       }
+       #tabbed-container .panel-wrap li{
+           display:block !important;
+           border-top:solid 1px #000;
+      }
+    }
+
+</style>
+
+<script>
+
+    var Citrix = Citrix || {};
+
+    Citrix.tabs = (function(){
+        var tabElement = document.getElementById("tab"),
+        tabLi = tabElement.getElementsByTagName("li"),
+        panelElement = document.getElementById("panel"),
+        panelLi = panelElement.getElementsByTagName("li"),
+        tabCount = 0,
+        hideAllElem,
+        mainFunc,
+        intPanel;
+
+        intPanel = function(){
+
+            //hide all element
+            hideAllElem = function(){
+                for (var i=0; i < tabLi.length; i++){
+                    tabLi.item(i).removeAttribute("class");
+                    panelLi.item(i).style.display = "none";
+                    tabLi.item(i).setAttribute("data-index", i);
+                }
+                return;
+            }
+
+            //tabs method
+            mainFunc = function(){
+                for (tabCount; tabCount < tabLi.length; tabCount++){
+                    tabLi.item(tabCount).onclick = function(){
+                        if(this.hasAttribute("class")){
+                            return;
+                        }
+                        hideAllElem();
+                        panelLi.item(parseInt(this.getAttribute("data-index"))).style.display = "block";
+                        this.setAttribute("class", "selected");
+                    }
+                }
+            }
+
+            mainFunc();
+
+        }//end intPanel
+
+        return {
+            startTabs: intPanel
+        }
+
+    }());
+
+    Citrix.tabs.startTabs();
+
+</script>
