@@ -677,6 +677,10 @@ and (max-width : 1024px) {
         left: 1%;
         margin-left: 0;
     }
+    
+      .sign_in_box input.sign_in_txt {
+        width: 200px;
+      }
 }
 
 
