@@ -168,6 +168,7 @@ h2, h3, h4 {
 
 button{
     -webkit-appearance: none; 
+    border-radius: 0;
     appearance: none;
     border: none;
     cursor: pointer;
@@ -454,6 +455,7 @@ p.date_md, p.date_d {
 }
 
 .sign_in_box .sign_in_submit {
+    -webkit-appearance: none;
     display:inline-block; 
     border-radius:5px; 
     font-weight:bold; 
@@ -633,9 +635,11 @@ and (max-width : 1024px) {
     padding: 10px;
 }
     
+/*
     .big_upload_Btn_Box{
         display: none;
     }
+*/
     
     .list_item_wrap .list_space .list_divider li.leftd {
         width: 45%;
