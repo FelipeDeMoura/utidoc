@@ -1,4 +1,4 @@
-var invokeWorker = new Worker("js/worker.js");
+//var invokeWorker = new Worker("js/worker.js");
 var getUservaleu;
 //create user
 var Ultidoc = Ultidoc || {};
@@ -29,39 +29,88 @@ Ultidoc.App = (function(){
                 UserStorageData = {userKey: 
                     {user: userFullName,
                     fileDesc: that.file.name,
-                    date: that.file.lastModified,
+                    //date: that.file.lastModified,
+                    date: new Date(),
                     lastDateMod: that.file.lastModifiedDate,
                     shared: userKey}
                 };
                 
-                var date_d_str,
-                    date_dm_str,
-                    user_str = public.userFullName,
-                    name_icon_str,
-                    intercept_name,
-                    deleteKey;
-                    
-                    
-                
-                for (var key in UserStorageData) {
-                    date_d_str = UserStorageData[key]['date'];
-                    date_dm_str = UserStorageData[key]['lastDateMod'];
-                    name_icon_str = UserStorageData[key]['fileDesc'],
-                    deleteKey = userKey;
-                    //intercept here
-                    //UserStorageData.userKey.fileDesc
-                }
-                buildHtmlfunc(user_str, date_d_str, date_dm_str, name_icon_str, deleteKey);
-                
                 //populate json string into localStorage
                 public.localStorage.setItem(userKey, JSON.stringify(UserStorageData.userKey));
+                
+                var user_str = public.userFullName;
+                
+                buildHtmlfunc(user_str, timeConverter(UserStorageData['userKey']['date']).currentDate, timeConverter(UserStorageData['userKey']['lastDateMod']).currentDate, UserStorageData['userKey']['fileDesc'], userKey);
+                
+                //populate json string into localStorage
+                //public.localStorage.setItem(userKey, JSON.stringify(UserStorageData.userKey));
             }(window));
             
         };
         
+        function scanForDuplicate(currentFile){
+            var keyNames = [],
+                values = [],
+                duplicateFile = false;
+
+                for (var i =0; i < localStorage.length; i++) {
+                    //get key name
+                    keyNames[i]=localStorage.key(i);                    
+                    //use key name to retreive
+                    values[i]=JSON.parse(localStorage.getItem(keyNames[i]));
+                    values[i]["fileDesc"];
+
+                    if(currentFile === values[i]["fileDesc"]){
+                        alert("Duplicate file: " + currentFile);
+                        //localStorage.removeItem(keyNames[i]);
+                        duplicateFile = true;
+                    }
+                }
+            
+            return {
+                duplicate: duplicateFile
+            }
+        }
+        
+        //time converter
+        var timeConverter = function(curdate){
+            
+            var returnDate,
+            curd = new Date(curdate);
+            
+            
+            function addZero(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            };
+            
+            var monthNam = [
+                "Jan", "Feb", "Mar",
+                "Apr", "May", "Jun", "Jul",
+                "Aug", "Sep", "Oct",
+                "Nov", "Dec"
+            ];
+            
+            returnDate = [
+                {
+                    "day": curd.getDate(),
+                    "month": monthNam[curd.getMonth()],
+                    "year": curd.getFullYear(),
+                    "hour": addZero(curd.getHours()),
+                    "minutes": addZero(curd.getMinutes())
+                }
+            ];
+            
+            return {
+                currentDate : returnDate[0]
+            };
+        };
+        
         //build html
-        buildHtmlfunc = function(username, date, datemodified, filename, delKey){
-            var htmlStr,
+        buildHtmlfunc = function(username, date, datemodi, filename, delKey){
+            var htmlStr = [],
             gp_html_str;
             
             //I know better I wanted to use createElement object or a underscore template 
@@ -69,15 +118,16 @@ Ultidoc.App = (function(){
                 "<div class='list_space'>",
                 "<ul class='list_divider'>",
                 "<li class='leftd'>",
-                "<span class='iconFile' data-type='" + filename + "'></span>",
+                "<span class='iconFile icon-" + filename.substr(filename.lastIndexOf('.') + 1) +"' data-type='" + filename + "'></span>",
                 "<div class='date_desc'>",
-                "<p class='date_d'>" + date + "</p>",
-                "<p class='date_md'>" + datemodified + "</p>",
+                "<p class='date_d' style=''>" + date.month + " " + date.day + ", " + date.year + " at " + date.hour + ":" + date.minutes + "</p>",
+                "<p class='date_md' style='font-size:11px;'>" + "<small style='display:block;'>Last Date Modified: </small>" + datemodi.month + " " + datemodi.day + ", " + datemodi.year + " at " + datemodi.hour + ":" + datemodi.minutes + "</p>",
                 "</div>",
                 "</li>",
                 "<li class='rightd'>",
                 "<h2 class='user_m'>" + username + "</h2>",
-                "<button class='share_btn'>share</button>",
+                "<small class='fileTxt'>" + filename.substr(0, filename.lastIndexOf('.')) + "</small>",
+                "<div><button class='share_btn'>share</button></div>",
                 "<span class='delete_btn' id='" + delKey + "'>x</span>",
                 "</li>",
                 "</ul>",
@@ -85,13 +135,75 @@ Ultidoc.App = (function(){
                 "</div>"];
 
                 gp_html_str = htmlStr.join("");
-                add_in_wrapper.innerHTML = gp_html_str;
+                add_in_wrapper.innerHTML += gp_html_str;
                 
-                sendMsgToWorker += gp_html_str;
+                //sendMsgToWorker += gp_html_str;
             
                 //send msg to worker
-                invokeWorker.postMessage(sendMsgToWorker);
-                //console.log("send msg to worker");
+                //invokeWorker.postMessage(sendMsgToWorker); 
+                
+        };
+        
+        //add event handler
+        registerEventHandler(function(selector,sharebtn){ 
+           delefiles(selector);
+           shareFiles(sharebtn);
+        });
+        
+        function shareFiles(shareselector){
+            var clickshare;
+            for(var i =0; i < shareselector.length; i++) {
+                shareselector[i].onclick = function(event){
+                    clickshare(this);
+                };
+            };
+            
+            clickshare = function(){
+                alert("Backend not available");
+            }
+        };
+        
+        
+        function delefiles(getdom){
+            
+         var deleteFile;
+
+            for(var i =0; i < getdom.length; i++) {
+                getdom[i].onclick = function(event){
+                    deleteFile(this);
+                };
+            };
+            
+            deleteFile = function(that){
+                
+                dialogTrig(null);
+                var noBtn = document.querySelector("#n"),
+                    yesBtn = document.querySelector("#y");
+
+                noBtn.onclick = function(){
+                    dialogTrig('hidebx');
+                };
+                
+                yesBtn.onclick = function(){
+                    dialogTrig('hidebx');
+                    var getParent = that.parentNode.parentNode;
+                    var nextParent = getParent.parentNode;
+                    nextParent.parentNode.style.display = "none";
+
+                    localStorage.removeItem(that.getAttribute("id"));
+                    add_in_wrapper.removeChild(nextParent.parentNode);
+                };
+            };
+        };
+        
+        function dialogTrig(hide){
+                    
+            hide = (hide == null) ? "" : hide;
+            var hlightBox = document.querySelector(".hlight_box"),
+                dialogMes = document.querySelector(".dialogMessage");
+
+            hlightBox.setAttribute("class", "hlight_box " + hide);
+            dialogMes.setAttribute("class", "dialogMessage " + hide);
         };
         
 
@@ -100,6 +212,7 @@ Ultidoc.App = (function(){
             var keyNames = [],
                 values = [],
                 int = 0;
+            
              //stract data from localStorage into the DOM
              function reconstructData(){
                  
@@ -116,14 +229,13 @@ Ultidoc.App = (function(){
                     //use key name to retreive
                     values[int]=JSON.parse(localStorage.getItem(keyNames[int]));
                     
-                    date_d_str = values[int]['date'];
-                    date_dm_str = values[int]['lastDateMod'];
+                    date_d_str = timeConverter(values[int]['date']).currentDate;
+                    date_dm_str = timeConverter(values[int]['lastDateMod']).currentDate;
                     name_icon_str = values[int]['fileDesc'];
                     user_str = values[int]['user'],
                     deleteKey = keyNames[int];
                     
                     buildHtmlfunc(user_str, date_d_str, date_dm_str, name_icon_str, deleteKey);
-                    //deleteRows(keyNames[int]);
                 }
                 
                 var userGlobal = (function(public){
@@ -137,9 +249,26 @@ Ultidoc.App = (function(){
         //clouser function int var - keep state of the browser
         var retrieveFullData = retrivedData();
         retrieveFullData();
-        
+        //var xmlhttp = new XMLHttpRequest();
         bigfileUpload.onchange = function(){
+            //scanForDuplicate(this.files[0].name).duplicate;
+            
+            //check for duplicate
+            if(scanForDuplicate(this.files[0].name).duplicate){
+                return;
+            }
+            
             var createNewUser = new CreateSessionUser(window.loginUser,this.files[0]);
+            //add event handler
+            registerEventHandler(function(selector,sharebtn){ 
+                delefiles(selector);
+                shareFiles(sharebtn);
+            });
+            
+            //xmlhttp.open("POST",this.files[0],false);
+            var formData = new FormData();
+            //formData.append('photos[]', this.files, this.files.name);
+            //xmlhttp.send();
         };
         
         function openLoginDialog(getUserName){
@@ -166,13 +295,27 @@ Ultidoc.App = (function(){
         openLoginDialog(window.loginUser);
         
         //msg received from worker
-        invokeWorker.onmessage = function(e) {
-            add_in_wrapper.innerHTML = e.data;
+        //invokeWorker.onmessage = function(e) {
+            //add_in_wrapper.innerHTML = e.data;
             //console.log("msg received from worker");
-        }
+        //}
         
     };//end
     
+    function registerEventHandler(callback){
+        
+        function getEvent() {
+            return {
+                bindEventHan: true,
+                deletebtn: document.querySelectorAll(".list_item_wrap .delete_btn"),
+                share_btn: document.querySelectorAll(".list_item_wrap .share_btn")
+            }
+        };
+        
+        setTimeout(function(){
+            callback(getEvent().deletebtn, getEvent().share_btn);  
+        }, 500);
+    };
     
     
     return {
