@@ -13,7 +13,8 @@ Ultidoc.App = (function(){
         delete_btn = document.querySelectorAll(".list_item_wrap .delete_btn"), 
         mainFunc,
         buildHtmlfunc,
-        sendMsgToWorker = "";
+        sendMsgToWorker = "",
+        isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     mainFunc = function(){
         
@@ -49,10 +50,13 @@ Ultidoc.App = (function(){
         };
         
         function scanForDuplicate(currentFile){
+
             var keyNames = [],
                 values = [],
                 duplicateFile = false;
-
+                
+            if(!isMobileDevice){
+                
                 for (var i =0; i < localStorage.length; i++) {
                     //get key name
                     keyNames[i]=localStorage.key(i);                    
@@ -66,6 +70,7 @@ Ultidoc.App = (function(){
                         duplicateFile = true;
                     }
                 }
+            }
             
             return {
                 duplicate: duplicateFile
@@ -251,7 +256,6 @@ Ultidoc.App = (function(){
         retrieveFullData();
         //var xmlhttp = new XMLHttpRequest();
         bigfileUpload.onchange = function(){
-            //scanForDuplicate(this.files[0].name).duplicate;
             
             //check for duplicate
             if(scanForDuplicate(this.files[0].name).duplicate){
