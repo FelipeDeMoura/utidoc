@@ -55,11 +55,11 @@ h2, h3, h4 {
 
 @font-face {
 	font-family: 'fileuploader';
-	src:url('/fonts/fileuploader.eot?n2vgwj');
-	src:url('/fonts/fileuploader.eot?#iefixn2vgwj') format('embedded-opentype'),
-		url('/fonts/fileuploader.ttf?n2vgwj') format('truetype'),
-		url('/fonts/fileuploader.woff?n2vgwj') format('woff'),
-		url('/fonts/fileuploader.svg?n2vgwj#fileuploader') format('svg');
+	src:url('http://felipedemoura.github.io/utidoc/fonts/fileuploader.eot');
+	src:url('http://felipedemoura.github.io/utidoc/fonts/fileuploader.eot') format('embedded-opentype'),
+		url('http://felipedemoura.github.io/utidoc/fonts/fileuploader.ttf') format('truetype'),
+		url('http://felipedemoura.github.io/utidoc/fonts/fileuploader.woff') format('woff'),
+		url('http://felipedemoura.github.io/utidoc/fonts/fileuploader.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
