@@ -95,7 +95,8 @@
         <form class="login-form">
           <select id="selectUsers" class="form-control">
             <option>Felipe De Moura</option>
-            <option>New user</option>
+            <option>James Choi</option>
+            <option>Stephanie Buzano</option>
           </select>
           <button id="submitUser" style="margin: 20px 0 20px 0;" type="button" class="btn btn-primary btn-lg btn-block">submit</button>
         </form>
@@ -116,13 +117,407 @@
 
          <div class="selectFish">
            <select style="display:none" id="freshwater" class="form-control option1">
-              <option>Fish fresh 01</option>
-              <option>Fish fresh 02</option>
+               <option value="Select one" selected="selected">
+ 				Select one
+ 			</option>
+ 						<option value="Bluegill">
+ 				Bluegill
+ 			</option>
+ 						<option value="Bowfin">
+ 				Bowfin
+ 			</option>
+ 						<option value="Catfish, Bullhead">
+ 				Catfish, Bullhead
+ 			</option>
+ 						<option value="Catfish, Channel">
+ 				Catfish, Channel
+ 			</option>
+ 						<option value="Catfish, Sailfin">
+ 				Catfish, Sailfin
+ 			</option>
+ 						<option value="Catfish, Walking">
+ 				Catfish, Walking
+ 			</option>
+ 						<option value="Crappie">
+ 				Crappie
+ 			</option>
+ 						<option value="Florida Gar">
+ 				Florida Gar
+ 			</option>
+ 						<option value="Golden Shiner">
+ 				Golden Shiner
+ 			</option>
+ 						<option value="Largemouth Bass">
+ 				Largemouth Bass
+ 			</option>
+ 						<option value="Mayan Cichlid">
+ 				Mayan Cichlid
+ 			</option>
+ 						<option value="Minnow, Unknown Fresh">
+ 				Minnow, Unknown Fresh
+ 			</option>
+ 						<option value="Not On List, Fresh">
+ 				Not On List, Fresh
+ 			</option>
+ 						<option value="Redear Sunfish/Shellcracker">
+ 				Redear Sunfish/Shellcracker
+ 			</option>
+ 						<option value="Spotted Sunfish">
+ 				Spotted Sunfish
+ 			</option>
+ 						<option value="Tilapia">
+ 				Tilapia
+ 			</option>
+ 						<option value="Tilapia, Blue">
+ 				Tilapia, Blue
+ 			</option>
+ 						<option value="Tilapia, Spotted">
+ 				Tilapia, Spotted
+ 			</option>
+ 						<option value="Warmouth">
+ 				Warmouth
+ 			</option>
+ 						<option value="Unknown, Fresh">
+ 				Unknown, Fresh
+ 			</option>
             </select>
 
             <select style="display:none" id="saltwater" class="form-control option2">
               <option value="test">Fish salt 01</option>
-              <option>Fish salt 02</option>
+              <select id="Field13" name="Field13" class="field select medium" onclick="handleInput(this);" onkeyup="handleInput(this);" tabindex="11">
+						<option value="Atlantic Bumper" selected="selected">
+				Atlantic Bumper
+			</option>
+						<option value="Barracuda">
+				Barracuda
+			</option>
+						<option value="Bigeye">
+				Bigeye
+			</option>
+						<option value="Black Margate">
+				Black Margate
+			</option>
+						<option value="Black Sea Bass">
+				Black Sea Bass
+			</option>
+						<option value="Blue Runner">
+				Blue Runner
+			</option>
+						<option value="Bluefish">
+				Bluefish
+			</option>
+						<option value="Catfish, Gafftop">
+				Catfish, Gafftop
+			</option>
+						<option value="Catfish, Hardhead">
+				Catfish, Hardhead
+			</option>
+						<option value="Checkered Pufferfish">
+				Checkered Pufferfish
+			</option>
+						<option value="Cigar Minnow (Scad)">
+				Cigar Minnow (Scad)
+			</option>
+						<option value="Coney">
+				Coney
+			</option>
+						<option value="Croaker">
+				Croaker
+			</option>
+						<option value="Croaker, Atlantic">
+				Croaker, Atlantic
+			</option>
+						<option value="Damselfish, Dusky">
+				Damselfish, Dusky
+			</option>
+						<option value="Damselfish, Unknown">
+				Damselfish, Unknown
+			</option>
+						<option value="Damselfish, Yellowtail">
+				Damselfish, Yellowtail
+			</option>
+						<option value="Dolphin/Mahi-Mahi">
+				Dolphin/Mahi-Mahi
+			</option>
+						<option value="Filefish, Scrawled">
+				Filefish, Scrawled
+			</option>
+						<option value="Filefish, Unicorn">
+				Filefish, Unicorn
+			</option>
+						<option value="Flounder">
+				Flounder
+			</option>
+						<option value="Flying Fish">
+				Flying Fish
+			</option>
+						<option value="Goby, Frillfin">
+				Goby, Frillfin
+			</option>
+						<option value="Goggle Eye">
+				Goggle Eye
+			</option>
+						<option value="Grouper, Black">
+				Grouper, Black
+			</option>
+						<option value="Grouper, Goliath">
+				Grouper, Goliath
+			</option>
+						<option value="Grunt, Bluestriped">
+				Grunt, Bluestriped
+			</option>
+						<option value="Grunt, French">
+				Grunt, French
+			</option>
+						<option value="Grunt, White">
+				Grunt, White
+			</option>
+						<option value="Gulf Whiting">
+				Gulf Whiting
+			</option>
+						<option value="Hairy Blenny">
+				Hairy Blenny
+			</option>
+						<option value="Herring, Threadfin">
+				Herring, Threadfin
+			</option>
+						<option value="Horse Eye Jack">
+				Horse Eye Jack
+			</option>
+						<option value="Houndfish">
+				Houndfish
+			</option>
+						<option value="Irish Pompano">
+				Irish Pompano
+			</option>
+						<option value="Jack, Almaco">
+				Jack, Almaco
+			</option>
+						<option value="Jack, Bar">
+				Jack, Bar
+			</option>
+						<option value="Jack, Crevalle">
+				Jack, Crevalle
+			</option>
+						<option value="Jack, Yellow">
+				Jack, Yellow
+			</option>
+						<option value="Kingfish/King Mackerel">
+				Kingfish/King Mackerel
+			</option>
+						<option value="Ladyfish">
+				Ladyfish
+			</option>
+						<option value="Little Tunny/&quot;Bonita&quot;">
+				Little Tunny/"Bonita"
+			</option>
+						<option value="Lizardfish">
+				Lizardfish
+			</option>
+						<option value="Lookdown">
+				Lookdown
+			</option>
+						<option value="Menhaden">
+				Menhaden
+			</option>
+						<option value="Minnow, Unknown Salt">
+				Minnow, Unknown Salt
+			</option>
+						<option value="Mojarra">
+				Mojarra
+			</option>
+						<option value="Mojarra, Striped">
+				Mojarra, Striped
+			</option>
+						<option value="Mojarra, Yellowfin">
+				Mojarra, Yellowfin
+			</option>
+						<option value="Moray Eel">
+				Moray Eel
+			</option>
+						<option value="Mullet">
+				Mullet
+			</option>
+						<option value="Needlefish">
+				Needlefish
+			</option>
+						<option value="Not On List, Salt">
+				Not On List, Salt
+			</option>
+						<option value="Parrotfish, Redfin">
+				Parrotfish, Redfin
+			</option>
+						<option value="Parrotfish, Redtail">
+				Parrotfish, Redtail
+			</option>
+						<option value="Pigfish">
+				Pigfish
+			</option>
+						<option value="Pinfish">
+				Pinfish
+			</option>
+						<option value="Pompano">
+				Pompano
+			</option>
+						<option value="Porgy">
+				Porgy
+			</option>
+						<option value="Porkfish">
+				Porkfish
+			</option>
+						<option value="Puddingwife">
+				Puddingwife
+			</option>
+						<option value="Rainbow Runner">
+				Rainbow Runner
+			</option>
+						<option value="Red Drum/Redfish">
+				Red Drum/Redfish
+			</option>
+						<option value="Red Needlefish">
+				Red Needlefish
+			</option>
+						<option value="Remora">
+				Remora
+			</option>
+						<option value="Sailor's Choice">
+				Sailor's Choice
+			</option>
+						<option value="Sand Perch">
+				Sand Perch
+			</option>
+						<option value="Sand Tilefish">
+				Sand Tilefish
+			</option>
+						<option value="Sardine, Scaled">
+				Sardine, Scaled
+			</option>
+						<option value="Sardine, Spanish">
+				Sardine, Spanish
+			</option>
+						<option value="Sargeant Major">
+				Sargeant Major
+			</option>
+						<option value="Saucereye Porgy">
+				Saucereye Porgy
+			</option>
+						<option value="Scamp">
+				Scamp
+			</option>
+						<option value="Scorpionfish">
+				Scorpionfish
+			</option>
+						<option value="Seabass">
+				Seabass
+			</option>
+						<option value="Shark, Bull">
+				Shark, Bull
+			</option>
+						<option value="Shark, Nurse">
+				Shark, Nurse
+			</option>
+						<option value="Shark, Reef">
+				Shark, Reef
+			</option>
+						<option value="Shark, Sharpnose">
+				Shark, Sharpnose
+			</option>
+						<option value="Sheepshead">
+				Sheepshead
+			</option>
+						<option value="Silver Perch">
+				Silver Perch
+			</option>
+						<option value="Silverside">
+				Silverside
+			</option>
+						<option value="Slippery Dick">
+				Slippery Dick
+			</option>
+						<option value="Smooth Pufferfish">
+				Smooth Pufferfish
+			</option>
+						<option value="Snapper, Cubera">
+				Snapper, Cubera
+			</option>
+						<option value="Snapper, Dog">
+				Snapper, Dog
+			</option>
+						<option value="Snapper, Lane">
+				Snapper, Lane
+			</option>
+						<option value="Snapper, Mangrove/Gray">
+				Snapper, Mangrove/Gray
+			</option>
+						<option value="Snapper, Mutton">
+				Snapper, Mutton
+			</option>
+						<option value="Snapper, Schoolmaster">
+				Snapper, Schoolmaster
+			</option>
+						<option value="Snapper, Vermillion">
+				Snapper, Vermillion
+			</option>
+						<option value="Snapper, Yellowtail">
+				Snapper, Yellowtail
+			</option>
+						<option value="Snook">
+				Snook
+			</option>
+						<option value="Soapfish">
+				Soapfish
+			</option>
+						<option value="Spanish Hogfish">
+				Spanish Hogfish
+			</option>
+						<option value="Spanish Mackerel">
+				Spanish Mackerel
+			</option>
+						<option value="Speedo (Redtail Scad)">
+				Speedo (Redtail Scad)
+			</option>
+						<option value="Spottail Pinfish">
+				Spottail Pinfish
+			</option>
+						<option value="Spotted Seatrout">
+				Spotted Seatrout
+			</option>
+						<option value="Spotted Sunfish">
+				Spotted Sunfish
+			</option>
+						<option value="Squirrel Fish">
+				Squirrel Fish
+			</option>
+						<option value="Stingray, Atlantic">
+				Stingray, Atlantic
+			</option>
+						<option value="Striped Burrfish">
+				Striped Burrfish
+			</option>
+						<option value="Tarpon">
+				Tarpon
+			</option>
+						<option value="Tilefish, Sand">
+				Tilefish, Sand
+			</option>
+						<option value="Toadfish">
+				Toadfish
+			</option>
+						<option value="Tomtate">
+				Tomtate
+			</option>
+						<option value="Triggerfish, Gray">
+				Triggerfish, Gray
+			</option>
+						<option value="Triggerfish, Queen">
+				Triggerfish, Queen
+			</option>
+						<option value="Trunkfish">
+				Trunkfish
+			</option>
+						<option value="Unknown, Salt">
+				Unknown, Salt
+			</option>
             </select>
           </div>
 
