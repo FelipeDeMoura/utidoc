@@ -334,22 +334,22 @@ window.onload = function(){
 
 // test only
 
-function success(position) {
-  locationObj.latitude  = position.coords.latitude;
-  locationObj.longitude = position.coords.longitude;
-};
-
-function geoLocation() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      var locationObj = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      };
-      return resolve(locationObj);
-    }, reject);
-  });
-}
+// function success(position) {
+//   locationObj.latitude  = position.coords.latitude;
+//   locationObj.longitude = position.coords.longitude;
+// };
+//
+// function geoLocation() {
+//   return new Promise((resolve, reject) => {
+//     navigator.geolocation.getCurrentPosition((position) => {
+//       var locationObj = {
+//         latitude: position.coords.latitude,
+//         longitude: position.coords.longitude
+//       };
+//       return resolve(locationObj);
+//     }, reject);
+//   });
+// }
 
 function dropDownUsers() {
     var elem = $('#selectUsers');
@@ -361,8 +361,8 @@ function dropDownUsers() {
 }
 
 var PayloadObj = {
-  username: dropDownUsers(),
-  location: geoLocation()
+  username: dropDownUsers()
+  // location: geoLocation()
 };
 
 // var myobj = PayloadObj;
