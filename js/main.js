@@ -26,7 +26,8 @@ Ultidoc.App = (function(){
             this.addlocalStorage = (function(public){
                 public.userFullName = that.username;
                 var uniqueKey = Math.floor((Math.random() * 1000) + 1),
-                userKey = (uniqueKey + "-" + userFullName.replace(/ /g,'')),
+                // userKey = (uniqueKey + "-" + userFullName.replace(/ /g,'')),
+                userKey = (uniqueKey + "-" + 'New Species'.replace(/ /g,'')),
                 UserStorageData = {userKey:
                     {user: userFullName,
                     fileDesc: that.file.name,
