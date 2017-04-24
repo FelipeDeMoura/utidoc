@@ -4,193 +4,69 @@
 <meta charset="utf-8">
 <meta http-equiv="cleartype" content="on">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>UTIDOC</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+<TITLE>UTIDOC</TITLE>
+<link href="css/style.css?v=21" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <h2>Jr Angler Fishing test001</h2>
-        </div>
-    <!--    <span class="uploader_btn_top"><input id="top_file_uploader" type="file" name="uploadfile" multiple>+</span>-->
-    </header>
-    <!-- start container -->
-    <div class="container">
-        <section class="wrapper">
-    <!--
-            <div class="list_item_wrap">
-                <div class="list_space">
-                    <ul class="list_divider">
-                        <li class="leftd">
-                            <span class="iconFile"></span>
-                            <div class="date_desc">
-                                <p class="date_d"></p>
-                                <p class="date_md"></p>
-                            </div>
-                        </li>
-                        <li class="rightd">
-                            <h2 class="user_m"></h2>
-                            <button class="share_btn">share</button>
-                            <span class="delete_btn">x</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    -->
-        </section><!-- end section wrapper -->
-    <!--     <footer class="big_upload_Btn_Box">
-            <div class="hid_loader_file">
-                <input id="big_file_uploader" type="file" name="uploadfile" multiple>
-                <button class="upload_btn_bottom">Upload Resources</button>
-            </div>
-        </footer> -->
-    </div><!-- end container -->
-
-    <!-- <div class="login_user hidebx">
-        <div class="login_space">
-            <h2>Welcome!</h2>
-            <h3>sign in is easy!</h3>
-            <div class="sign_in_box">
-                <input type="text" name="signin" placeholder="type your full name"  onfocus="if(this.placeholder == 'type your full name') { this.placeholder = ''; }" id="signIn" class="sign_in_txt">
-                <input type="submit" class="sign_in_submit" value="go">
+<header class="header">
+    <div class="logo">
+        <h2>ultidoc</h2>
+    </div>
+<!--    <span class="uploader_btn_top"><input id="top_file_uploader" type="file" name="uploadfile" multiple>+</span>-->
+</header>  
+<!-- start container -->
+<div class="container">
+    <section class="wrapper">
+<!--
+        <div class="list_item_wrap">
+            <div class="list_space">
+                <ul class="list_divider">
+                    <li class="leftd">
+                        <span class="iconFile"></span>
+                        <div class="date_desc">
+                            <p class="date_d"></p>
+                            <p class="date_md"></p>
+                        </div>
+                    </li>
+                    <li class="rightd">
+                        <h2 class="user_m"></h2>
+                        <button class="share_btn">share</button>
+                        <span class="delete_btn">x</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div> -->
+-->
+    </section><!-- end section wrapper -->
+    <footer class="big_upload_Btn_Box">
+        <div class="hid_loader_file">
+            <input id="big_file_uploader" type="file" name="uploadfile" multiple>
+            <button class="upload_btn_bottom">Upload Resources</button>
+        </div>
+    </footer>
+</div><!-- end container -->
 
-      <div class="login_user hidebx">
-        <div class="login_space">
-            <h2>Welcome!</h2>
-            <h3>sign in is easy!</h3>
-            <div class="sign_in_box">
-              <!-- add login -->
-    <!--    <div class="form" style="display: none;">
-        <form class="register-form">
-          <input type="text" placeholder="name"/>
-          <input type="password" placeholder="password"/>
-          <input type="text" placeholder="email address"/>
-          <button>create</button>
-          <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form>
-       </div> -->
-              <!-- add login -->
-
-
-                 <!-- add upload fish -->
-      <div class="form">
-
-        <form class="login-form">
-          <select id="selectUsers" class="form-control">
-              <option>Felipe De Moura</option>
-              <option>James Choi</option>
-              <option>Stephanie Buzano</option>
-          </select>
-          <button id="submitUser" style="margin: 20px 0 20px 0;" type="button" class="btn btn-primary btn-lg btn-block">submit</button>
-        </form>
-     <form class="register-form">
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-        Fresh Water
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-       Salt Water
-      </label>
-    </div>
-
-
-         <div class="selectFish">
-           <select style="display:none" id="freshwater" class="form-control option1">
-              <option>Fish fresh 01</option>
-              <option>Fish fresh 02</option>
-              <option>Fish fresh 03</option>
-              <option>Fish fresh 04</option>
-              <option>Fish fresh 05</option>
-              <option>Fish fresh 06</option>
-              <option>Fish fresh 07</option>
-            </select>
-
-            <select style="display:none" id="saltwater" class="form-control option2">
-              <option>Fish salt 01</option>
-              <option>Fish salt 02</option>
-              <option>Fish salt 03</option>
-              <option>Fish salt 04</option>
-              <option>Fish salt 05</option>
-              <option>Fish salt 06</option>
-              <option>Fish salt 07</option>
-            </select>
-          </div>
-
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" class="multipleSpec">
-        Do you have more than one of the same fish?
-      </label>
-       <span class="alertSpec" style="display: none; font-size: 14px; font-weight: bold; color: red; font-style: italic;">(max 5 species)</span>
-    </div>
-
-          <div id="uploadFiles">
-          <div style="display:block;" class="single test">
-    <!--           <label style="display:block;">Same species</label> -->
-               <div class="hid_loader_file" style="width: 100%;">
-                  <input type="file" style="width: 100%;" />
-                  <button id="big_file_uploader" class="upload_btn_bottom">Upload Image</button>
-               </div>
-          </div>
-
-          <div style="display:none;" class="multiple">
-    <!--           <label>Multiple species</label> -->
-    <!--           <span class="btn btn-default btn-file"><span>Choose file</span>
-              <input type="file" class="multipleInput" multiple /></span> -->
-              <div class="hid_loader_file" style="width: 100%;">
-                  <input type="file" style="width: 100%;" multiple />
-                  <button class="upload_btn_bottom">Upload Images</button>
-              </div>
-          </div>
-          </div>
-
-        </div></form>
-                 <!-- add search -->
-            </div>
+<div class="login_user hidebx">
+    <div class="login_space">
+        <h2>Welcome!</h2>
+        <h3>sign in is easy!</h3>
+        <div class="sign_in_box">
+            <input type="text" name="signin" placeholder="type your full name"  onfocus="if(this.placeholder == 'type your full name') { this.placeholder = ''; }" id="signIn" class="sign_in_txt">
+            <input type="submit" class="sign_in_submit" value="go">
         </div>
     </div>
-
-
-    <!-- <div class="dialogMessage hidebx">
-        <div class="msg_space">
-            <h3>Are you sure!</h3>
-            <button id="y" class="btn_comm">Yes</button><button id="n" class="btn_comm">No</button>
-        </div>
-    </div> -->
-    <div class="hlight_box hidebx"></div>
-
-    <!-- main js -->
-    <!-- <script src="js/main.js"></script> -->
-
-
-      <div style="width: 100%; height: 100%; position: fixed; top: 0; left: 0;">
-    <div class="app">
-      <div class="water"></div>
+</div>
+    
+    
+<div class="dialogMessage hidebx">
+    <div class="msg_space">
+        <h3>Are you sure!</h3>
+        <button id="y" class="btn_comm">Yes</button><button id="n" class="btn_comm">No</button>
     </div>
-    </div>
-
+</div>
+<div class="hlight_box hidebx"></div>
+    
 <!-- main js -->
 <script src="js/main.js"></script>
 </body>
